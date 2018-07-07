@@ -1,0 +1,10 @@
+[
+  {
+    "DeviceId": "Device 1",
+    "LocationId": "2"
+  },
+  {
+	  "DeviceId": "Device 2",
+    "LocationId": "2"  
+  }
+]

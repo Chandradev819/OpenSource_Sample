@@ -1,0 +1,12 @@
+﻿[
+  {
+    "CustomerId": "1",
+    "CustomerName": "raj",
+    "Password": "raj"
+  },
+  {
+    "CustomerId": "2",
+    "CustomerName": "sujana",
+    "Password": "sujana"
+  }
+]

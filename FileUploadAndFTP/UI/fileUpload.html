@@ -1,0 +1,75 @@
+﻿<div class="container" ng-controller="fileUploadController">
+    <div class="row">
+        <div class="col-lg-12 loggedUser">
+            <h4> Logged in as user: <span style="color:darkred"> <b> {{currentUser}}</b></span></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">
+            <img src="../Images/web_logo.png" style="width:100px;height:90px;text-align:left;" />
+        </div>
+        <div class="col-lg-12 location" />
+    </div>
+    <div class="row">
+        <div class="col-lg-12 fileUpload">
+            <a style="margin-left:10px;" href="#/file-list" class=" btn-info btn-lg">Ad List </a>
+            <a style="margin-left:10px;" href="#/manage-states" class="btn-info btn-lg" ng-show="Role==AdminRole">Manage Locations</a>
+            <a style="margin-left:10px;" href="#/login" class="btn-info btn-lg">Logout </a>
+            <br />
+        </div>
+    </div>
+    <div class="row"><div class="col-lg-12 location" /></div>
+    <!--<div class="alert alert-info row">
+        <strong>Note:</strong> File upload page is opened on a new browser tab. After upload is complete, go to file list page and refresh.
+    </div>-->
+    <div class="row">
+        <div class="col-sm-8 col-md-4 col-lg-4 col-xs-8 col-sm-offset-2 col-md-offset-4 col-lg-offset-4 col-xs-offset-2">
+            <div class="upload-wall">
+                <h3 class="text-center">Upload File</h3>
+                <form id="fUpload" name="form1" class="form-signin" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="fileUploadValid">
+                            <ul type="square">
+                                <li>Supported  file formats: PNG, JPG, TIFF, BMP, GIF, MP4</li>
+                                <li>File name should not exceed 15 characters, allows only alpha-numeric and should not contain any special characters or blank spaces.</li>
+                                <li>Supported image size: 1920 x 1080 px</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span>&nbsp;</span>
+                    </div>
+                    <div class="row">
+                        <label>Select Media</label>
+                        <input ng-required="true" name="myFile" type="file" class="form-control" accept="image/*,video/*" onchange="angular.element(this).scope().ValidateFileName(this)" />
+                    </div>
+                    <div class="row">
+                        <label>Location</label>
+                        <dropdown-multiselect dropdown-title="selected_items" pre-selected="member.states" model="selected_items" options="states"></dropdown-multiselect>
+                        <input type="hidden" name="locations" value="{{selected_items}}" />
+                    </div>
+                    <div class="row" ng-show="Role==AdminRole">
+                        <label>Customers</label>
+                        <select ng-required="Role==AdminRole" class="form-control input-sm" ng-options="c as c.CustomerName for c in customers" ng-model="customer">
+                            <option value="" selected="selected">Select Customer</option>
+                        </select>
+                        <input type="text" style="display:none" class="form-control" name="appUserId" value="{{currentUserId}}" />
+                        <input type="text" style="display:none" class="form-control" name="customerId" value="{{Role==AdminRole ? customer != null ? customer.CustomerId : CustomerId: CustomerId}}" />
+                    </div>
+                    <input type="hidden" name="customerName" value="{{customer != null ? customer.CustomerName : currentUser}}" />
+                    <div class="row">
+                        <label style="display:none">Ad Startdate</label>
+                        <input style="display:none" type="text" id="startDate" name="startDate" class="form-control" placeholder="Ad Startdate" is-open="status.opened" readonly="readonly" oncontextmenu="return false;" onkeypress="return false;" onpaste="return false;" show-button-bar="false" show-weeks="false" uib-datepicker-popup="dd-MMM-yyyy" ng-model="temp" />
+                        <button style="display:none" type="button" class="datepickericon" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        <!--<input type="hidden" name="CustomerId" id="CustomerId" value="{{CustomerId}}" />-->
+                        <br />
+                        <br />
+                    </div>
+                    <div class="row">
+                        <button type="button" id="btnAdd" class="btn btn-success btn-lg btn-block" ng-click="addNewFile()">Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

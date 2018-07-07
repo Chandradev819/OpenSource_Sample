@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div><p><center><b>Manage Location</b></center> </p></div>
+    <div style="text-align:right;"><p style="width:80% "><b><a href="#">New Customer</a></b></p></div>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../Scripts/app/app.js"></script>-->
+
+    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+
+  
+    
+
+        <div style="border:solid 1px; padding:30px 0 10px 0" class="container">
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Private
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Live
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <div class="row">
+                            <label for="inputPrivateCust" class="col-sm-4 control-label">Private Customer</label>
+                            <div class="col-sm-6">
+                                <select class="form-control">
+                                    <option value="" disabled selected>Select Customer Business</option>
+                                    <option>Business 1</option>
+                                    <option>Business 2</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Location Vendor</label>
+                        <div class="col-sm-6">
+                            <select class="form-control">
+                                <option value="" disabled selected>Select Vendor</option>
+                                <option>Vendor 1</option>
+                                <option>Vendor 2</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <div class="row">
+                            <label for="input2" class="col-sm-4 control-label">In the Location Store</label>
+                            <div class="col-sm-6">
+                                <label for="inputlbl3" class="col-sm-4 control-label"></label>
+                                <input type="text" class="form-control" ng-model="StateInfo.Location" placeholder="Type">
+                            </div>
+                            <div class="col-sm-2">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <div class="row">
+                            <label for="inputStreet" class="col-sm-4 control-label">Street Name</label>
+                            <div class="col-sm-6">
+
+                                <input type="text" class="form-control" ng-model="StateInfo.Street" placeholder="Type">
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <div class="row">
+                            <label for="inputCity" class="col-sm-4 control-label">City</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" ng-model="StateInfo.City" placeholder="Type">
+                            </div>
+                            <div class="col-sm-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for=" inputemail3" class="col-sm-4 control-label"> State</label>
+                        <div class="col-sm-3">
+                            <select class="form-control">
+                                <option value="" disabled selected>Select State</option>
+                                <option>State 1</option>
+                                <option>State 2</option>
+                                <option>N/A</option>
+                            </select>
+                        </div>
+                        <label for="inputZip" class="col-sm-1    control-label">Zip</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" ng-model="StateInfo.Zip" placeholder="Type">
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <div class="row">
+                            <label for="inputCountry" class="col-sm-4 control-label">Country</label>
+                            <div class="col-sm-6">
+                                <select class="form-control">
+                                    <option value="" disabled selected>Select Country</option>
+                                    <option>India</option>
+                                    <option>US</option>
+                                    <option>UK</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Trafic Type</label>
+                        <div class="col-sm-6">
+                            <select class="form-control">
+                                <option value="" disabled selected>Select Trafic Type</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>N/A</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-8 col-sm-6"></div>
+                    <div class="form-group col-xs-8 col-sm-6">
+                        <input type="button" class="btn btn-primary" value="{{saveText}}" ng-click="SaveUpdateState()" />
+                        <input type="button" class="btn btn-danger" value="Clear" ng-click="cleartext()" />
+
+                    </div>
+                    <div class="form-group col-xs-8 col-sm-6"></div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                &nbsp;
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-12 border">
+                    <div class="row header" style="padding-bottom:5px">
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <b>#</b>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2" style="word-wrap:break-word;" ng-click="sort('Location')">
+                            <b>Location</b>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2" style="word-wrap:break-word;" ng-click="sort('CompanyName')">
+                            <b>Company Name</b>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2" style="word-wrap:break-word;" ng-click="sort('Street')">
+                            <b>Street</b>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2" style="word-wrap:break-word;" ng-click="sort('City')">
+                            <b>City</b>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1" style="word-wrap:break-word;" ng-click="sort('State')">
+                            <b>State</b>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1" style="word-wrap:break-word;" ng-click="sort('Zip')">
+                            <b>Zip</b>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <!--</div>
+                        <div class="col-md-1 col-sm-1 col-xs-1">-->
+                        </div>
+                    </div>
+                    <div ng-repeat="state in stateslist|orderBy:sortKey:reverse" class="row gridstyle">
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            {{$index+1}}
+                        </div>
+                        <!--State Name-->
+                        <div class="col-md-2 col-sm-2 col-xs-2" style="word-wrap:break-word;">
+                            {{state.Location}}
+                        </div>
+                        <!--Company Name-->
+                        <div class="col-md-2 col-sm-2 col-xs-2" style="word-wrap:break-word;">
+                            {{state.CompanyName}}
+                        </div>
+                        <!--Street-->
+                        <div class="col-md-2 col-sm-2 col-xs-2" style="word-wrap:break-word;">
+                            {{state.Street}}
+                        </div>
+                        <!--Street-->
+                        <div class="col-md-2 col-sm-2 col-xs-2" style="word-wrap:break-word;">
+                            {{state.City}}
+                        </div>
+
+                        <!--Street-->
+                        <div class="col-md-1 col-sm-1 col-xs-1" style="word-wrap:break-word;">
+                            {{state.State}}
+                        </div>
+
+                        <!--Street-->
+                        <div class="col-md-1 col-sm-1 col-xs-1" style="word-wrap:break-word;">
+                            {{state.Zip}}
+                        </div>
+
+                        <!--edit icon-->
+                        <div class="col-md-1 col-sm-1 col-xs-1" style="padding:5px;cursor:pointer">
+                            <div class="glyphicon glyphicon-edit" style="font-size:large;color:gray;margin-left:20px" ng-click="editState(state)"></div>
+                            <!--</div>-->
+                            <!--Delete icon-->
+                            <!--<div class="col-md-1 col-sm-1 col-xs-1" style="padding:5px;cursor:pointer">-->
+                            <div class="glyphicon glyphicon-trash" style="font-size:x-large;color:#f05f40;margin-left:20px" ng-click="deleteState(state)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</body>
+</html>

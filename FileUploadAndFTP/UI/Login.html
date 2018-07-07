@@ -1,0 +1,26 @@
+﻿
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-8 col-sm-offset-2 col-md-offset-4 col-lg-offset-4 col-xs-offset-2">
+            <img src="../Images/web_logo.png" style="width:250px;height:90px;text-align:center;padding-left:130px" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-md-4 col-lg-4 col-xs-8 col-sm-offset-2 col-md-offset-4 col-lg-offset-4 col-xs-offset-2">
+            <div class="account-wall">
+                <h3 class="text-center">Login</h3>
+                <form class="form-signin ng-scope ng-pristine ng-valid">
+                   
+                    <label>User Name</label>
+                    <input type="text" ng-model="username" class="form-control ng-pristine ng-valid">
+                    <br />
+                    <label>Password</label>
+                    <input type="password" ng-model="password" class="form-control ng-pristine ng-valid">
+                    <label class="validation-msg">{{loginError}}</label>
+                    <button class="btn btn-success btn-lg btn-block" ng-click="loginUser()">Login</button>
+                    <button class="btn btn-warning btn-lg btn-block" ng-click="cancel()">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,163 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-12 loggedUser">
+            <h4> Logged in as user: <span style="color:darkred"> <b> {{currentUser}}</b></span></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            <img src="../Images/web_logo.png" style="width:100px;height:90px;text-align:left;" />
+        </div>
+        <div class="col-lg-5">
+            <div class="short-div boxborder">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="" target="_blank" onsubmit="try {return window.confirm(&quot;You are submitting information to an external page.\nAre you sure?&quot;);} catch (e) {return false;}">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="7Q5DBGJTKRR9U">
+                    <table align="center">
+                        <tr><td style="font-size:18px;"><input type="hidden" name="on0" value="Advertisement Fee">Advertisement Fee</td></tr>
+                        <tr>
+                            <td>
+                                <!--<input type="text" name="os0" maxlength="200">-->
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span translate="COMMON.DOLLER-SYMBOL" class="ng-scope">$</span></span>
+                                    <input type="text" name="os0" ng-model="feeAmount" class="form-control currency" placeholder="0.00" moneyformat maxlength="15" format-min="0" format-max="9999999" format-decimals="2" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" style="padding:3px;" alt=" paypal - the safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">-->
+                    <div id="paypal-button-container" style="padding:5px;"></div>
+                </form>
+                <span class="paypalNote">You will be taken to Paypal's site to complete the payment.</span>
+            </div>
+        </div>
+        <div class="col-lg-5 filelistMenu">
+            <a style="margin-left:10px;" href="#/manage-states" class="btn-info btn-lg" ng-show="Role==AdminRole">Manage Locations</a>
+            <a style="margin-left:10px;" href="#/file-upload" class="btn-info btn-lg">Upload files </a>
+            <a style="margin-left:10px;" href="#/login" class="btn-info btn-lg">Logout </a>
+            <br />
+        </div>
+
+    </div>
+    <!--<div class="row">
+        <div class="col-lg-12 fileUpload">
+            <a style="margin-left:10px;" href="#/manage-states" class="btn-info btn-lg" ng-show="Role==AdminRole">Manage Locations</a>
+            <a style="margin-left:10px;" href="#/file-upload" class="btn-info btn-lg">Upload files </a>
+            <a style="margin-left:10px;" href="#/login" class="btn-info btn-lg">Logout </a>
+            <br />
+        </div>
+    </div>-->
+    <div class="row">
+        <div class="col-lg-10 fileUpload">
+            <h3 class="text-center">Ad List</h3>
+        </div>
+    </div>
+    <div class="row"><div class="col-lg-12" /></div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-12 border">
+                <div class="row header" style="padding-bottom:5px">
+                    <div class="col-xs-1">
+                        <b>#</b>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" ng-click="sort('fileName')">
+                        <b>File Name</b>
+                    </div>
+                    <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> -->
+                    <!-- <b>Start Date</b> -->
+                    <!-- </div> -->
+                    <div class="col-md-1 col-sm-1 col-xs-1" ng-click="sort('fileStatus')">
+                        <b>Status</b>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <b>Image preview</b>
+                    </div>
+                    <div class="col-md-2 col-sm-1 col-xs-1" ng-click="sort('locationName')">
+                        <b>Location</b>
+                    </div>
+                    <div class="col-md-2 col-sm-1 col-xs-1" ng-click="sort('customerName')">
+                        <b>Customer Name</b>
+                    </div>
+                    <div class="col-xs-1" ng-show="Role==AdminRole">
+                        <b>Approve</b>
+                    </div>
+                    <div class="col-xs-1">
+                        <b>Delete</b>
+                    </div>
+
+                </div>
+                <div dir-paginate="file in filesList|orderBy:sortKey:reverse|itemsPerPage:9999" class=" row gridstyle" style="padding-top:.3em;padding-bottom:.3em;">
+                    <!--<div ng-if="currentUser=='admin' || (currentUser!='admin' && file.customerAdminId==currentUserId)">-->
+                    <div class="col-xs-1">
+                        {{SetPage($index)}}
+                    </div>
+                    <!--File Name-->
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="word-wrap:break-word;">
+                        {{file.fileName}}
+                    </div>
+                    <!--Date-->
+                    <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> -->
+                    <!-- {{file.uploadedDate}} -->
+                    <!-- </div> -->
+                    <!--Status-->
+                    <div class="col-md-1 col-sm-1 col-xs-1">
+                        {{file.fileStatus}}
+                    </div>
+                    <!--Image Preview-->
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <a href="/Upload{{file.filePath}}" target="_blank" ng-show="file.mediaType == 2">
+                            <img src="/Upload{{file.filePath}}" width="50" height="50" />
+                        </a>
+                        <div ng-show="file.mediaType == 1">
+                            {{file.fileName}}
+                        </div>
+                    </div>
+                    <!---Location-->
+                    <div class="col-md-2 col-sm-1 col-xs-1" style="word-wrap:break-word;">
+                        {{file.locationName}}
+                    </div>                    <!---CustomerName-->
+                    <div class="col-md-2 col-sm-1 col-xs-1" style="word-wrap:break-word;">
+                        {{file.customerName}}
+                    </div>
+                    <!--Approved icon-->
+                    <div class="col-xs-1" style="padding:5px;" ng-show="Role==AdminRole && file.fileStatus=='approved'">
+                        <div class="glyphicon glyphicon-ok" style="font-size:large;color:lightgreen;margin-left:20px"></div>
+                    </div>
+                    <div class="col-xs-1" style="padding:5px;cursor:pointer" ng-show="Role== AdminRole && file.fileStatus=='pending'">
+                        <div class="glyphicon glyphicon-ok" style="font-size:large;color:gray;margin-left:20px" ng-click="approveFile(file)"></div>
+                    </div>
+                    <!--Delete icon-->
+                    <div class="col-md-1 col-sm-1 col-xs-1" style="padding:5px;cursor:pointer">
+                        <div class="fa fa-trash" style="font-size:x-large;color:#f05f40;margin-left:20px" ng-click="deleteFile(file)"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row height-5"></div>
+        <!--<div class="row boxborder" style="margin:15px!important;">
+            <div class="col-lg-4" style="width:40%"><span> </span></div>
+            <div class="col-lg-4" style="width:40%; padding:5px;">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onsubmit="try {return window.confirm(&quot;You are submitting information to an external page.\nAre you sure?&quot;);} catch (e) {return false;}">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="7Q5DBGJTKRR9U">
+                    <table>
+                        <tr><td style="font-weight:bold"><input type="hidden" name="on0" value="Advertisement Fee">Advertisement Fee</td></tr>
+                        <tr><td><input type="text" name="os0" maxlength="200"></td></tr>
+                    </table>
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" style="padding:3px;" alt=" paypal - the safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+                <span class="paypalNote">You will be taken to Paypal's site to complete the payment.</span>
+            </div>
+            <div class="col-lg-4"><span> </span></div>
+
+        </div>-->
+        <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+        </div>
+    </div>
+</div>
